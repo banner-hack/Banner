@@ -18,6 +18,7 @@
 		B17A32FC2A21158700031097 /* BannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A32FB2A21158700031097 /* BannerTests.swift */; };
 		B17A33062A21158700031097 /* BannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A33052A21158700031097 /* BannerUITests.swift */; };
 		B17A33082A21158700031097 /* BannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A33072A21158700031097 /* BannerUITestsLaunchTests.swift */; };
+		B17A33172A211A0D00031097 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A33162A211A0D00031097 /* R.generated.swift */; };
 		C25AEB5E6BB0A7E7D0A9A252 /* Pods_BannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2686D16EA2B6BA55B83302 /* Pods_BannerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		B17A33012A21158700031097 /* BannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17A33052A21158700031097 /* BannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerUITests.swift; sourceTree = "<group>"; };
 		B17A33072A21158700031097 /* BannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B17A33162A211A0D00031097 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		DB2686D16EA2B6BA55B83302 /* Pods_BannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0F950AF384F401E731DC6E0 /* Pods-Banner-BannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner-BannerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Banner-BannerUITests/Pods-Banner-BannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8DFCC18112B0B8D09E20D2C /* Pods-Banner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner.release.xcconfig"; path = "Target Support Files/Pods-Banner/Pods-Banner.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		B17A32D82A21158600031097 = {
 			isa = PBXGroup;
 			children = (
+				B17A33162A211A0D00031097 /* R.generated.swift */,
 				B17A32E32A21158600031097 /* Banner */,
 				B17A32FA2A21158700031097 /* BannerTests */,
 				B17A33042A21158700031097 /* BannerUITests */,
@@ -164,7 +167,6 @@
 				1D5057F58A46271105FF6C3A /* Pods-BannerTests.debug.xcconfig */,
 				023974BF2FDE3B02532D1A91 /* Pods-BannerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -175,11 +177,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B17A330B2A21158700031097 /* Build configuration list for PBXNativeTarget "Banner" */;
 			buildPhases = (
+				B17A33142A21187800031097 /* R.Swift */,
 				4E2F6C8E58BDAB7942A8F7E1 /* [CP] Check Pods Manifest.lock */,
 				B17A32DD2A21158600031097 /* Sources */,
 				B17A32DE2A21158600031097 /* Frameworks */,
 				B17A32DF2A21158600031097 /* Resources */,
 				42C99AFAAF26FF95E664CD5C /* [CP] Embed Pods Frameworks */,
+				B17A33152A21196E00031097 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -383,6 +387,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B17A33142A21187800031097 /* R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.Swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		B17A33152A21196E00031097 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		E9F3AD98E2D8CC71B6C053C1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -410,6 +454,7 @@
 				B17A32E92A21158600031097 /* ViewController.swift in Sources */,
 				B17A32E52A21158600031097 /* AppDelegate.swift in Sources */,
 				B17A32E72A21158600031097 /* SceneDelegate.swift in Sources */,
+				B17A33172A211A0D00031097 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
