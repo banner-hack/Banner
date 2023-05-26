@@ -14,6 +14,7 @@ struct _R {
   let bundle: Foundation.Bundle
   var color: color { .init(bundle: bundle) }
   var info: info { .init(bundle: bundle) }
+  var nib: nib { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
   func color(bundle: Foundation.Bundle) -> color {
@@ -22,10 +23,14 @@ struct _R {
   func info(bundle: Foundation.Bundle) -> info {
     .init(bundle: bundle)
   }
+  func nib(bundle: Foundation.Bundle) -> nib {
+    .init(bundle: bundle)
+  }
   func storyboard(bundle: Foundation.Bundle) -> storyboard {
     .init(bundle: bundle)
   }
   func validate() throws {
+    try self.nib.validate()
     try self.storyboard.validate()
   }
 
@@ -83,28 +88,34 @@ struct _R {
             let bundle: Foundation.Bundle
             var uiSceneConfigurationName: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication"], key: "UISceneConfigurationName") ?? "Default Configuration" }
             var uiSceneDelegateClassName: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication"], key: "UISceneDelegateClassName") ?? "$(PRODUCT_MODULE_NAME).SceneDelegate" }
-            var uiSceneStoryboardFile: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication"], key: "UISceneStoryboardFile") ?? "Main" }
           }
         }
       }
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    let bundle: Foundation.Bundle
+
+    /// Nib `HomeViewController`.
+    var homeViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "HomeViewController", bundle: bundle) }
+
+    func validate() throws {
+
+    }
+  }
+
+  /// This `_R.storyboard` struct is generated, and contains static references to 1 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var launchScreen: launchScreen { .init(bundle: bundle) }
-    var main: main { .init(bundle: bundle) }
 
     func launchScreen(bundle: Foundation.Bundle) -> launchScreen {
       .init(bundle: bundle)
     }
-    func main(bundle: Foundation.Bundle) -> main {
-      .init(bundle: bundle)
-    }
     func validate() throws {
       try self.launchScreen.validate()
-      try self.main.validate()
     }
 
 
@@ -115,18 +126,6 @@ struct _R {
       let bundle: Foundation.Bundle
 
       let name = "LaunchScreen"
-      func validate() throws {
-
-      }
-    }
-
-    /// Storyboard `Main`.
-    struct main: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
-      typealias InitialController = ViewController
-
-      let bundle: Foundation.Bundle
-
-      let name = "Main"
       func validate() throws {
 
       }
