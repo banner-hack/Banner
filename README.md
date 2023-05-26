@@ -1,5 +1,4 @@
 # Banner
-# AI.pic
 
 
 
