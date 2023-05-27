@@ -10,16 +10,22 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Foundation
 
- struct Restaurants: Identifiable, Codable {
+struct Restaurants: Identifiable, Codable {
     @DocumentID var id: String?
     var name: String
-    var businessHours: Date
+    var businessHours: String
     var address: String
+    var latitude: Double
+    var longitude: Double
+    var comments: [String]
 
-     init(id: String?, name: String, businessHours: Date, address: String) {
-         self.id = id
-         self.name = name
-         self.businessHours = businessHours
-         self.address = address
-     }
- }
+    init(id: String? = nil, name: String, businessHours: String, address: String, latitude: Double, longitude: Double, comments: [String]) {
+        self.id = id
+        self.name = name
+        self.businessHours = businessHours
+        self.address = address
+        self.latitude = latitude
+        self.longitude = longitude
+        self.comments = comments
+    }
+}
