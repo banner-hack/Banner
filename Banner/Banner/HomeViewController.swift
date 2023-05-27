@@ -9,12 +9,8 @@ import CoreLocation
 import MapKit
 import UIKit
 
-final class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
-
-    let imagePickerController = UIImagePickerController()
-
+final class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var mapView: MKMapView!
-
     private var locationManager = CLLocationManager()
 
     init() {
@@ -31,16 +27,6 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
         locationManager.delegate = self
         setupMapView()
         print("CLLocationManager.authorizationStatus=\(CLLocationManager.authorizationStatus().description)")
-
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .camera
-        imagePickerController.cameraCaptureMode = .photo
-
-        // 通知の許可をリクエストする
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-            // Enable or disable features based on authorization
-        }
     }
 
     @IBAction func onRequestAlways(_ sender: Any) {
@@ -49,40 +35,6 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
 
     @IBAction func onRequestWhenInUse(_ sender: Any) {
         locationManager.requestWhenInUseAuthorization()
-    }
-
-
-    @IBAction func qrButtonTapped(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            present(imagePickerController, animated: true, completion: nil)
-        } else {
-            print("Camera not available")
-        }
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            // Do something with the image
-        }
-        picker.dismiss(animated: true, completion: nil)
-
-        // 写真撮影後通知がトリガーされる
-        let content = UNMutableNotificationContent()
-        content.title = "撮影完了"
-        content.body = "写真を見てみよう！"
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-        let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request) { (error) in
-            if let error = error {
-                print("Error adding notification request: \(error.localizedDescription)")
-            } else {
-                print("Notification request added successfully")
-            }
-        }
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
     }
 }
 
