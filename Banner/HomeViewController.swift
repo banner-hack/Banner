@@ -99,7 +99,7 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
         // 写真撮影後通知がトリガーされる
         let content = UNMutableNotificationContent()
         content.title = "撮影完了"
-        content.body = "50Pt獲得しました！"
+        content.body = "50Pt獲得しました"
         content.sound = .default
 
         if let imageUrl = Bundle.main.url(forResource: "notification_icon", withExtension: "png") {
