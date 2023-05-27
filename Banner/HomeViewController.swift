@@ -12,7 +12,7 @@ import UIKit
 final class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UIAdaptivePresentationControllerDelegate {
     let imagePickerController = UIImagePickerController()
 
-    @IBOutlet weak var halfModal: UIButton!
+    @IBOutlet var halfModal: UIButton!
 
     private let firebaseUtil = FirebaseUtil()
 
@@ -30,10 +30,10 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         DispatchQueue.main.async {
             let halfModal = HalfModalViewController()
-            halfModal.showHalfModal()
+            //            halfModal.showHalfModal()
         }
 
         locationManager.delegate = self
@@ -67,12 +67,12 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
 
     @IBAction func testGetData() {
         Task {
-               do {
-                   let restaurantsData = try await firebaseUtil.getDocuments()
-                   print(restaurantsData)
-               } catch {
-                   print("Failed to retrieve document data: \(error.localizedDescription)")
-               }
+            do {
+                let restaurantsData = try await firebaseUtil.getDocuments()
+                print(restaurantsData)
+            } catch {
+                print("Failed to retrieve document data: \(error.localizedDescription)")
+            }
         }
     }
 
@@ -83,10 +83,10 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
             print("Camera not available")
         }
     }
-    
+
     @IBAction func halfModalButton() {
         let halfModal = HalfModalViewController()
-        halfModal.showHalfModal()
+        self.segueToHalfModalView()
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
@@ -190,43 +190,20 @@ extension HomeViewController {
         annotation.coordinate = initialLocation.coordinate
         mapView.addAnnotation(annotation)
     }
-    
-//    private func showHalfModal() {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let modalVC = storyboard.instantiateViewController(withIdentifier: "modal")
-//        let nextVC = UIViewController(nibName: R.nib.halfModalViewController.name, bundle: nil)
-//
-//        // HalfModalViewController のビューを追加する
-//        addChild(nextVC)
-//        nextVC.view.frame = view.bounds
-//        view.addSubview(nextVC.view)
-//        nextVC.didMove(toParent: self)
-//
-//        if let sheet = nextVC.presentationController as? UISheetPresentationController {
-//            sheet.detents = [
-//                .custom { context in 0.3 * context.maximumDetentValue }
-//            ]
-//        }
-//        nextVC.presentationController?.delegate = self
-//        present(nextVC, animated: true, completion: nil)
-//    }
 }
-
-//let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//    let modalVC = storyboard.instantiateViewController(withIdentifier: "modal")
-//    if let sheet = modalVC.sheetPresentationController {
-//        sheet.detents = [
-//            .custom { context in 0.5 * context.maximumDetentValue }
-//        ]
-//    }
-//   modalVC.presentationController?.delegate = self
-//   present(modalVC, animated: true, completion: nil)
-
 
 private extension HomeViewController {
     @IBAction func getLocation() {
         let locationModel = LocationModel()
         locationModel.setUpLocation()
-        //        locationModel.locationManagerDidChangeAuthorization(locationManage)
+    }
+
+    func segueToHalfModalView() {
+        let halfModalView = HalfModalViewController()
+
+        if let sheet = halfModalView.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+        }
+        present(halfModalView, animated: true)
     }
 }
