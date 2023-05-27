@@ -9,7 +9,8 @@ target 'Banner' do
 
 pod 'R.swift'
 pod 'SwiftLint'
-
+pod 'FirebaseAnalytics'
+pod 'FirebaseFirestore'
 
   target 'BannerTests' do
     inherit! :search_paths

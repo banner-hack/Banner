@@ -5,6 +5,7 @@
 //  Created by Keitaro Kawahara on 2023/05/27.
 //
 
+import FirebaseCore
 import UIKit
 
 @main
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 
