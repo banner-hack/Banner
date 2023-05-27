@@ -27,4 +27,24 @@ struct FirebaseUtil {
             print("Error adding document: \(error)")
         }
     }
+
+    func getDocuments() async throws -> [Restaurants] {
+        var restaurants: [Restaurants] = []
+        let querySnapshot = try await db.collection("Restaurants").getDocuments()
+
+        for document in querySnapshot.documents {
+            guard
+                let name = document.data()["name"] as? String,
+                let businessHours = document.data()["businessHours"] as? Timestamp,
+                let address = document.data()["address"] as? String
+            else {
+                throw NSError(domain: "FirebaseUtilError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to retrieve document data"])
+            }
+            let docID = document.documentID
+
+            restaurants.append(Restaurants(id: docID, name: name, businessHours: businessHours.dateValue(), address: address))
+        }
+
+        return restaurants
+    }
 }
