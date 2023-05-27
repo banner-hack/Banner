@@ -25,16 +25,16 @@ final class HomeViewController: UIViewController, CLLocationManagerDelegate {
 
         locationManager.delegate = self
 
-             print("CLLocationManager.authorizationStatus=\(CLLocationManager.authorizationStatus().description)")
+        print("CLLocationManager.authorizationStatus=\(CLLocationManager.authorizationStatus().description)")
     }
 
     @IBAction func onRequestAlways(_ sender: Any) {
-          locationManager.requestAlwaysAuthorization()
-      }
+        locationManager.requestAlwaysAuthorization()
+    }
 
-      @IBAction func onRequestWhenInUse(_ sender: Any) {
-          locationManager.requestWhenInUseAuthorization()
-      }
+    @IBAction func onRequestWhenInUse(_ sender: Any) {
+        locationManager.requestWhenInUseAuthorization()
+    }
 }
 
 extension HomeViewController {
@@ -61,6 +61,15 @@ extension HomeViewController {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("didUpdateLocations locations=\(locations)")
+        let location = locations.first
+        guard
+            let latitude = location?.coordinate.latitude,
+            let longitude = location?.coordinate.longitude
+        else {
+            return
+        }
+        var locationData = Location(latitude: latitude, longitude: longitude)
+        print(location)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -72,6 +81,6 @@ private extension HomeViewController {
     @IBAction func getLocation() {
         let locationModel = LocationModel()
         locationModel.setUpLocation()
-//        locationModel.locationManagerDidChangeAuthorization(locationManage)
+        //        locationModel.locationManagerDidChangeAuthorization(locationManage)
     }
 }
