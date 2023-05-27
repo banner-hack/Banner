@@ -13,6 +13,9 @@
 		B141DF532A211E19004B4EEC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B141DF512A211E19004B4EEC /* HomeViewController.xib */; };
 		B141DF552A212572004B4EEC /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B141DF542A212572004B4EEC /* LocationModel.swift */; };
 		B141DF572A21A10C004B4EEC /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B141DF562A21A10C004B4EEC /* LocationData.swift */; };
+		B141DF592A21CA50004B4EEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B141DF582A21CA50004B4EEC /* GoogleService-Info.plist */; };
+		B141DF5B2A21CD7F004B4EEC /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B141DF5A2A21CD7F004B4EEC /* FirebaseUtil.swift */; };
+		B141DF5D2A21D22F004B4EEC /* RestaurantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B141DF5C2A21D22F004B4EEC /* RestaurantsModel.swift */; };
 		B17A32E52A21158600031097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A32E42A21158600031097 /* AppDelegate.swift */; };
 		B17A32E72A21158600031097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A32E62A21158600031097 /* SceneDelegate.swift */; };
 		B17A32EE2A21158700031097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B17A32ED2A21158700031097 /* Assets.xcassets */; };
@@ -50,6 +53,9 @@
 		B141DF512A211E19004B4EEC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B141DF542A212572004B4EEC /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		B141DF562A21A10C004B4EEC /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		B141DF582A21CA50004B4EEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B141DF5A2A21CD7F004B4EEC /* FirebaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtil.swift; sourceTree = "<group>"; };
+		B141DF5C2A21D22F004B4EEC /* RestaurantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsModel.swift; sourceTree = "<group>"; };
 		B17A32E12A21158600031097 /* Banner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Banner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17A32E42A21158600031097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B17A32E62A21158600031097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		B17A32E32A21158600031097 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
+				B141DF582A21CA50004B4EEC /* GoogleService-Info.plist */,
 				B17A32E42A21158600031097 /* AppDelegate.swift */,
 				B17A32E62A21158600031097 /* SceneDelegate.swift */,
 				B17A32ED2A21158700031097 /* Assets.xcassets */,
@@ -142,6 +149,8 @@
 				B141DF512A211E19004B4EEC /* HomeViewController.xib */,
 				B141DF542A212572004B4EEC /* LocationModel.swift */,
 				B141DF562A21A10C004B4EEC /* LocationData.swift */,
+				B141DF5A2A21CD7F004B4EEC /* FirebaseUtil.swift */,
+				B141DF5C2A21D22F004B4EEC /* RestaurantsModel.swift */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -288,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B17A32F12A21158700031097 /* LaunchScreen.storyboard in Resources */,
+				B141DF592A21CA50004B4EEC /* GoogleService-Info.plist in Resources */,
 				B17A32EE2A21158700031097 /* Assets.xcassets in Resources */,
 				B141DF532A211E19004B4EEC /* HomeViewController.xib in Resources */,
 			);
@@ -459,9 +469,11 @@
 			files = (
 				B141DF572A21A10C004B4EEC /* LocationData.swift in Sources */,
 				B17A32E52A21158600031097 /* AppDelegate.swift in Sources */,
+				B141DF5B2A21CD7F004B4EEC /* FirebaseUtil.swift in Sources */,
 				B17A32E72A21158600031097 /* SceneDelegate.swift in Sources */,
 				B17A33172A211A0D00031097 /* R.generated.swift in Sources */,
 				B141DF552A212572004B4EEC /* LocationModel.swift in Sources */,
+				B141DF5D2A21D22F004B4EEC /* RestaurantsModel.swift in Sources */,
 				B141DF522A211E19004B4EEC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,6 +5,8 @@
 //  Created by Keitaro Kawahara on 2023/05/27.
 //
 
+import FirebaseCore
+import IQKeyboardManagerSwift
 import UIKit
 
 @main
@@ -16,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         // Override point for customization after application launch.
+        IQKeyboardManager.shared.enable = true
+        FirebaseApp.configure()
         return true
     }
 

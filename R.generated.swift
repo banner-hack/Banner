@@ -15,6 +15,7 @@ struct _R {
   var color: color { .init(bundle: bundle) }
   var image: image { .init(bundle: bundle) }
   var info: info { .init(bundle: bundle) }
+  var file: file { .init(bundle: bundle) }
   var nib: nib { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
@@ -25,6 +26,9 @@ struct _R {
     .init(bundle: bundle)
   }
   func info(bundle: Foundation.Bundle) -> info {
+    .init(bundle: bundle)
+  }
+  func file(bundle: Foundation.Bundle) -> file {
     .init(bundle: bundle)
   }
   func nib(bundle: Foundation.Bundle) -> nib {
@@ -104,6 +108,14 @@ struct _R {
         }
       }
     }
+  }
+
+  /// This `_R.file` struct is generated, and contains static references to 1 resource files.
+  struct file {
+    let bundle: Foundation.Bundle
+
+    /// Resource file `GoogleService-Info.plist`.
+    var googleServiceInfoPlist: RswiftResources.FileResource { .init(name: "GoogleService-Info", pathExtension: "plist", bundle: bundle, locale: LocaleReference.none) }
   }
 
   /// This `_R.nib` struct is generated, and contains static references to 1 nibs.

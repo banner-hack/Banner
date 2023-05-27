@@ -11,6 +11,7 @@ import UIKit
 
 final class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     let imagePickerController = UIImagePickerController()
+    private let firebaseUtil = FirebaseUtil()
 
     @IBOutlet var mapView: MKMapView!
 
@@ -48,6 +49,23 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
 
     @IBAction func onRequestWhenInUse(_ sender: Any) {
         locationManager.requestWhenInUseAuthorization()
+    }
+
+    @IBAction func testSaveToFirestore() {
+        Task {
+            try await firebaseUtil.addDocument()
+        }
+    }
+
+    @IBAction func testGetData() {
+        Task {
+               do {
+                   let restaurantsData = try await firebaseUtil.getDocuments()
+                   print(restaurantsData)
+               } catch {
+                   print("Failed to retrieve document data: \(error.localizedDescription)")
+               }
+        }
     }
 
     @IBAction func qrButtonTapped(_ sender: Any) {
