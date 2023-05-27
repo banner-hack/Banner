@@ -106,9 +106,12 @@ struct _R {
     }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     let bundle: Foundation.Bundle
+
+    /// Nib `HalfModalViewController`.
+    var halfModalViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "HalfModalViewController", bundle: bundle) }
 
     /// Nib `HomeViewController`.
     var homeViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "HomeViewController", bundle: bundle) }
