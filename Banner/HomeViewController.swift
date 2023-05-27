@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 import CoreLocation
 
-<<<<<<< HEAD
 final class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet var getLocationButton: UIButton!
