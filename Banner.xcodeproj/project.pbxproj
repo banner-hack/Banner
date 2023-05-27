@@ -154,12 +154,9 @@
 				B141DF512A211E19004B4EEC /* HomeViewController.xib */,
 				B141DF542A212572004B4EEC /* LocationModel.swift */,
 				B141DF562A21A10C004B4EEC /* LocationData.swift */,
-<<<<<<< HEAD
 				469257C42A21CE5F004EC6E3 /* HalfModalViewController.xib */,
-=======
 				B141DF5A2A21CD7F004B4EEC /* FirebaseUtil.swift */,
 				B141DF5C2A21D22F004B4EEC /* RestaurantsModel.swift */,
->>>>>>> 70679a84bc4464b8c8e437d0546787fb43499662
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -655,7 +652,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D4NXL78FU5;
+				DEVELOPMENT_TEAM = SC6CF67RJH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Banner/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "カメラを使用します。";
@@ -686,7 +683,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D4NXL78FU5;
+				DEVELOPMENT_TEAM = SC6CF67RJH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Banner/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "カメラを使用します。";

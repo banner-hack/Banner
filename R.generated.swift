@@ -113,9 +113,6 @@ struct _R {
     }
   }
 
-<<<<<<< HEAD
-  /// This `_R.nib` struct is generated, and contains static references to 2 nibs.
-=======
   /// This `_R.file` struct is generated, and contains static references to 1 resource files.
   struct file {
     let bundle: Foundation.Bundle
@@ -124,8 +121,7 @@ struct _R {
     var googleServiceInfoPlist: RswiftResources.FileResource { .init(name: "GoogleService-Info", pathExtension: "plist", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
->>>>>>> 70679a84bc4464b8c8e437d0546787fb43499662
+  /// This `_R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
