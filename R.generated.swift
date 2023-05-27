@@ -54,12 +54,15 @@ struct _R {
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 1 images.
+  /// This `_R.image` struct is generated, and contains static references to 2 images.
   struct image {
     let bundle: Foundation.Bundle
 
     /// Image `QR`.
     var qR: RswiftResources.ImageResource { .init(name: "QR", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `icons`.
+    var icons: RswiftResources.ImageResource { .init(name: "icons", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.
@@ -110,6 +113,9 @@ struct _R {
     }
   }
 
+<<<<<<< HEAD
+  /// This `_R.nib` struct is generated, and contains static references to 2 nibs.
+=======
   /// This `_R.file` struct is generated, and contains static references to 1 resource files.
   struct file {
     let bundle: Foundation.Bundle
@@ -119,8 +125,12 @@ struct _R {
   }
 
   /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
+>>>>>>> 70679a84bc4464b8c8e437d0546787fb43499662
   struct nib {
     let bundle: Foundation.Bundle
+
+    /// Nib `HalfModalViewController`.
+    var halfModalViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "HalfModalViewController", bundle: bundle) }
 
     /// Nib `HomeViewController`.
     var homeViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "HomeViewController", bundle: bundle) }

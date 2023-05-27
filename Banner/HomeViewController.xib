@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Banner" customModuleProvider="target">
             <connections>
+                <outlet property="halfModal" destination="trb-Bc-4VL" id="WYa-Dc-x3B"/>
                 <outlet property="mapView" destination="1vp-HU-P6Q" id="Uot-9o-0cm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,6 +35,15 @@
                         <action selector="qrButtonTapped:" destination="-1" eventType="touchUpInside" id="CYO-d8-7YO"/>
                     </connections>
                 </button>
+<<<<<<< HEAD
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trb-Bc-4VL">
+                    <rect key="frame" x="220" y="310" width="75" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="halfModalButton" destination="-1" eventType="touchUpInside" id="ZDs-L4-499"/>
+=======
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hb-bL-QIM">
                     <rect key="frame" x="46" y="304" width="151" height="108"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -50,6 +60,7 @@
                     <buttonConfiguration key="configuration" style="plain" title="testGetData"/>
                     <connections>
                         <action selector="testGetData" destination="-1" eventType="touchUpInside" id="5Rz-Gj-Q17"/>
+>>>>>>> 70679a84bc4464b8c8e437d0546787fb43499662
                     </connections>
                 </button>
             </subviews>

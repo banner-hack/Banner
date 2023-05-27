@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		27F9EBAA7D836327D18226D7 /* Pods_Banner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18E691FE69D62D23F5109C5 /* Pods_Banner.framework */; };
 		3AB68B649AF1FEC6FF65E8BC /* Pods_Banner_BannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3498BA44755F1100FBCD0B /* Pods_Banner_BannerUITests.framework */; };
+		469257C32A21CA03004EC6E3 /* HalfModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469257C22A21CA03004EC6E3 /* HalfModalViewController.swift */; };
+		469257C52A21CE5F004EC6E3 /* HalfModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 469257C42A21CE5F004EC6E3 /* HalfModalViewController.xib */; };
 		B141DF522A211E19004B4EEC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B141DF502A211E19004B4EEC /* HomeViewController.swift */; };
 		B141DF532A211E19004B4EEC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B141DF512A211E19004B4EEC /* HomeViewController.xib */; };
 		B141DF552A212572004B4EEC /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B141DF542A212572004B4EEC /* LocationModel.swift */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		023974BF2FDE3B02532D1A91 /* Pods-BannerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerTests.release.xcconfig"; path = "Target Support Files/Pods-BannerTests/Pods-BannerTests.release.xcconfig"; sourceTree = "<group>"; };
 		1D5057F58A46271105FF6C3A /* Pods-BannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerTests.debug.xcconfig"; path = "Target Support Files/Pods-BannerTests/Pods-BannerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		469257C22A21CA03004EC6E3 /* HalfModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalViewController.swift; sourceTree = "<group>"; };
+		469257C42A21CE5F004EC6E3 /* HalfModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HalfModalViewController.xib; sourceTree = "<group>"; };
 		6D9DD0B00A6EF77478C1508F /* Pods-Banner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner.debug.xcconfig"; path = "Target Support Files/Pods-Banner/Pods-Banner.debug.xcconfig"; sourceTree = "<group>"; };
 		A18E691FE69D62D23F5109C5 /* Pods_Banner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Banner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B141DF502A211E19004B4EEC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -144,13 +148,18 @@
 				B17A32E62A21158600031097 /* SceneDelegate.swift */,
 				B17A32ED2A21158700031097 /* Assets.xcassets */,
 				B17A32EF2A21158700031097 /* LaunchScreen.storyboard */,
+				469257C22A21CA03004EC6E3 /* HalfModalViewController.swift */,
 				B17A32F22A21158700031097 /* Info.plist */,
 				B141DF502A211E19004B4EEC /* HomeViewController.swift */,
 				B141DF512A211E19004B4EEC /* HomeViewController.xib */,
 				B141DF542A212572004B4EEC /* LocationModel.swift */,
 				B141DF562A21A10C004B4EEC /* LocationData.swift */,
+<<<<<<< HEAD
+				469257C42A21CE5F004EC6E3 /* HalfModalViewController.xib */,
+=======
 				B141DF5A2A21CD7F004B4EEC /* FirebaseUtil.swift */,
 				B141DF5C2A21D22F004B4EEC /* RestaurantsModel.swift */,
+>>>>>>> 70679a84bc4464b8c8e437d0546787fb43499662
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -300,6 +309,7 @@
 				B141DF592A21CA50004B4EEC /* GoogleService-Info.plist in Resources */,
 				B17A32EE2A21158700031097 /* Assets.xcassets in Resources */,
 				B141DF532A211E19004B4EEC /* HomeViewController.xib in Resources */,
+				469257C52A21CE5F004EC6E3 /* HalfModalViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +482,7 @@
 				B141DF5B2A21CD7F004B4EEC /* FirebaseUtil.swift in Sources */,
 				B17A32E72A21158600031097 /* SceneDelegate.swift in Sources */,
 				B17A33172A211A0D00031097 /* R.generated.swift in Sources */,
+				469257C32A21CA03004EC6E3 /* HalfModalViewController.swift in Sources */,
 				B141DF552A212572004B4EEC /* LocationModel.swift in Sources */,
 				B141DF5D2A21D22F004B4EEC /* RestaurantsModel.swift in Sources */,
 				B141DF522A211E19004B4EEC /* HomeViewController.swift in Sources */,
@@ -644,7 +655,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SC6CF67RJH;
+				DEVELOPMENT_TEAM = D4NXL78FU5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Banner/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "カメラを使用します。";
@@ -675,7 +686,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SC6CF67RJH;
+				DEVELOPMENT_TEAM = D4NXL78FU5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Banner/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "カメラを使用します。";
