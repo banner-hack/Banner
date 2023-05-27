@@ -117,6 +117,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B1056CA52A2273EE00C54D28 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B141DF502A211E19004B4EEC /* HomeViewController.swift */,
+				469257C22A21CA03004EC6E3 /* HalfModalViewController.swift */,
+				B141DF512A211E19004B4EEC /* HomeViewController.xib */,
+				469257C42A21CE5F004EC6E3 /* HalfModalViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B1056CA62A22743900C54D28 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B141DF542A212572004B4EEC /* LocationModel.swift */,
+				B141DF562A21A10C004B4EEC /* LocationData.swift */,
+				B141DF5A2A21CD7F004B4EEC /* FirebaseUtil.swift */,
+				B141DF5C2A21D22F004B4EEC /* RestaurantsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B17A32D82A21158600031097 = {
 			isa = PBXGroup;
 			children = (
@@ -143,20 +165,14 @@
 		B17A32E32A21158600031097 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
+				B1056CA52A2273EE00C54D28 /* ViewController */,
+				B1056CA62A22743900C54D28 /* Models */,
 				B141DF582A21CA50004B4EEC /* GoogleService-Info.plist */,
 				B17A32E42A21158600031097 /* AppDelegate.swift */,
 				B17A32E62A21158600031097 /* SceneDelegate.swift */,
 				B17A32ED2A21158700031097 /* Assets.xcassets */,
 				B17A32EF2A21158700031097 /* LaunchScreen.storyboard */,
-				469257C22A21CA03004EC6E3 /* HalfModalViewController.swift */,
 				B17A32F22A21158700031097 /* Info.plist */,
-				B141DF502A211E19004B4EEC /* HomeViewController.swift */,
-				B141DF512A211E19004B4EEC /* HomeViewController.xib */,
-				B141DF542A212572004B4EEC /* LocationModel.swift */,
-				B141DF562A21A10C004B4EEC /* LocationData.swift */,
-				469257C42A21CE5F004EC6E3 /* HalfModalViewController.xib */,
-				B141DF5A2A21CD7F004B4EEC /* FirebaseUtil.swift */,
-				B141DF5C2A21D22F004B4EEC /* RestaurantsModel.swift */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
