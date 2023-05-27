@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Banner" customModuleProvider="target">
             <connections>
+                <outlet property="getLocationButton" destination="xRd-Za-TKb" id="QfJ-Ej-1mr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,6 +26,17 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRd-Za-TKb">
+                    <rect key="frame" x="136" y="455" width="146" height="81"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="位置情報を取得"/>
+                    <connections>
+                        <action selector="getLocation" destination="-1" eventType="touchUpInside" id="anK-y7-wYz"/>
+                        <action selector="onRequestAlways:" destination="-1" eventType="touchUpInside" id="ohm-MI-3RR"/>
+                        <action selector="onRequestWhenInUse:" destination="-1" eventType="touchUpInside" id="dDc-1c-Zbe"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
