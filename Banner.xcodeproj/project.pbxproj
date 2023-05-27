@@ -177,8 +177,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B17A330B2A21158700031097 /* Build configuration list for PBXNativeTarget "Banner" */;
 			buildPhases = (
-				B17A33142A21187800031097 /* R.Swift */,
 				4E2F6C8E58BDAB7942A8F7E1 /* [CP] Check Pods Manifest.lock */,
+				B17A33142A21187800031097 /* R.Swift */,
 				B17A32DD2A21158600031097 /* Sources */,
 				B17A32DE2A21158600031097 /* Frameworks */,
 				B17A32DF2A21158600031097 /* Resources */,
@@ -402,7 +402,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
