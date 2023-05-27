@@ -13,11 +13,15 @@ let R = _R(bundle: Bundle(for: BundleFinder.self))
 struct _R {
   let bundle: Foundation.Bundle
   var color: color { .init(bundle: bundle) }
+  var image: image { .init(bundle: bundle) }
   var info: info { .init(bundle: bundle) }
   var nib: nib { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
   func color(bundle: Foundation.Bundle) -> color {
+    .init(bundle: bundle)
+  }
+  func image(bundle: Foundation.Bundle) -> image {
     .init(bundle: bundle)
   }
   func info(bundle: Foundation.Bundle) -> info {
@@ -44,6 +48,14 @@ struct _R {
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
+  }
+
+  /// This `_R.image` struct is generated, and contains static references to 1 images.
+  struct image {
+    let bundle: Foundation.Bundle
+
+    /// Image `QR`.
+    var qR: RswiftResources.ImageResource { .init(name: "QR", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.
@@ -102,7 +114,7 @@ struct _R {
     var homeViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "HomeViewController", bundle: bundle) }
 
     func validate() throws {
-
+      if UIKit.UIImage(named: "QR", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'QR' is used in nib 'HomeViewController', but couldn't be loaded.") }
     }
   }
 

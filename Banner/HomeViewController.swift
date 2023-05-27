@@ -10,7 +10,6 @@ import MapKit
 import UIKit
 
 final class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
-
     let imagePickerController = UIImagePickerController()
 
     @IBOutlet var mapView: MKMapView!
@@ -38,7 +37,7 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
 
         // 通知の許可をリクエストする
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+        center.requestAuthorization(options: [.alert, .sound]) { _, _ in
             // Enable or disable features based on authorization
         }
     }
@@ -51,7 +50,6 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
         locationManager.requestWhenInUseAuthorization()
     }
 
-
     @IBAction func qrButtonTapped(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             present(imagePickerController, animated: true, completion: nil)
@@ -60,7 +58,7 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             // Do something with the image
         }
@@ -72,7 +70,7 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
         content.body = "写真を見てみよう！"
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request) { (error) in
+        UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("Error adding notification request: \(error.localizedDescription)")
             } else {
