@@ -7,12 +7,13 @@
 
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 import Foundation
 
 struct FirebaseUtil {
     var db = Firestore.firestore()
 
-    var docRef = db.collection("Restaurants")
+    lazy var docRef = db.collection("Restaurants")
 
     func addDocument() {
 //        try await db.collection("Users").addDocument(from: )
