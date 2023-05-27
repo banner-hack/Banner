@@ -50,6 +50,13 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
         locationManager.requestWhenInUseAuthorization()
     }
 
+    @IBAction func testSaveToFirestore() {
+        let firebaseUtil = FirebaseUtil()
+        Task {
+           try await firebaseUtil.addDocument()
+        }
+    }
+
     @IBAction func qrButtonTapped(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             present(imagePickerController, animated: true, completion: nil)

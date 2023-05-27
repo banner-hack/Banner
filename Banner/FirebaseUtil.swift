@@ -15,8 +15,16 @@ struct FirebaseUtil {
 
     lazy var docRef = db.collection("Restaurants")
 
-    func addDocument() {
-//        try await db.collection("Users").addDocument(from: )
+    init() {}
 
+    func addDocument() async throws {
+        do {
+            let now = Date()
+
+            let saveData = Restaurants(id: nil, name: "test", businessHours: now, address: "aaa")
+            try await db.collection("Restaurants").addDocument(from: saveData)
+        } catch {
+            print("Error adding document: \(error)")
+        }
     }
 }

@@ -16,7 +16,7 @@ import Foundation
     var businessHours: Date
     var address: String
 
-     init(id: String, name: String, businessHours: Date, address: String) {
+     init(id: String?, name: String, businessHours: Date, address: String) {
          self.id = id
          self.name = name
          self.businessHours = businessHours
