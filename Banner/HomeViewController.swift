@@ -6,12 +6,11 @@
 //
 
 import CoreLocation
-import UIKit
 import MapKit
-import CoreLocation
+import UIKit
 
 final class HomeViewController: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet var mapView: MKMapView!
     @IBOutlet var getLocationButton: UIButton!
     private var locationManager = CLLocationManager()
 
@@ -72,6 +71,7 @@ extension HomeViewController {
             return
         }
         var locationData = Location(latitude: latitude, longitude: longitude)
+        let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         mapView.showsUserLocation = true
         mapView.setRegion(region, animated: true)
@@ -81,27 +81,26 @@ extension HomeViewController {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("didFailWithError error=\(error.localizedDescription)")
     }
-    
+
     private func setupMapView() {
         // ユーザーの現在位置を取得
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
+
         // 地図の初期表示領域を設定
         let initialLocation = locationManager.location ?? CLLocation(latitude: 35.6895, longitude: 139.6917)
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate,
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
-        
+
         // ピンを追加
         let annotation = MKPointAnnotation()
         annotation.coordinate = initialLocation.coordinate
         mapView.addAnnotation(annotation)
     }
-    
 }
 
 private extension HomeViewController {
