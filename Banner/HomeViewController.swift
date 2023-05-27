@@ -11,7 +11,6 @@ import UIKit
 
 final class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var mapView: MKMapView!
-    @IBOutlet var getLocationButton: UIButton!
     private var locationManager = CLLocationManager()
 
     init() {
