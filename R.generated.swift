@@ -143,8 +143,8 @@ struct _R {
     func validate() throws {
       if UIKit.UIImage(named: "demo_img-1", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'demo_img-1' is used in nib 'HalfModalViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "demo_img-2", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'demo_img-2' is used in nib 'HalfModalViewController', but couldn't be loaded.") }
-      if UIKit.UIImage(named: "QR", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'QR' is used in nib 'HomeViewController', but couldn't be loaded.") }
       if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "magnifyingglass") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'magnifyingglass' is used in nib 'HomeViewController', but couldn't be loaded.") } }
+      if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "qrcode") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'qrcode' is used in nib 'HomeViewController', but couldn't be loaded.") } }
     }
   }
 
