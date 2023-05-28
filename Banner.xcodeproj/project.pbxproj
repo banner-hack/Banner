@@ -13,6 +13,7 @@
 		469257C52A21CE5F004EC6E3 /* HalfModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 469257C42A21CE5F004EC6E3 /* HalfModalViewController.xib */; };
 		B1056CA92A227B6F00C54D28 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1056CA72A227B6F00C54D28 /* DetailViewController.swift */; };
 		B1056CAA2A227B6F00C54D28 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1056CA82A227B6F00C54D28 /* DetailViewController.xib */; };
+		B1056CAC2A22FA3900C54D28 /* GPTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1056CAB2A22FA3900C54D28 /* GPTModel.swift */; };
 		B141DF522A211E19004B4EEC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B141DF502A211E19004B4EEC /* HomeViewController.swift */; };
 		B141DF532A211E19004B4EEC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B141DF512A211E19004B4EEC /* HomeViewController.xib */; };
 		B141DF552A212572004B4EEC /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B141DF542A212572004B4EEC /* LocationModel.swift */; };
@@ -57,6 +58,7 @@
 		A18E691FE69D62D23F5109C5 /* Pods_Banner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Banner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1056CA72A227B6F00C54D28 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B1056CA82A227B6F00C54D28 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		B1056CAB2A22FA3900C54D28 /* GPTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTModel.swift; sourceTree = "<group>"; };
 		B141DF502A211E19004B4EEC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B141DF512A211E19004B4EEC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B141DF542A212572004B4EEC /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				B141DF562A21A10C004B4EEC /* LocationData.swift */,
 				B141DF5A2A21CD7F004B4EEC /* FirebaseUtil.swift */,
 				B141DF5C2A21D22F004B4EEC /* RestaurantsModel.swift */,
+				B1056CAB2A22FA3900C54D28 /* GPTModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				B141DF552A212572004B4EEC /* LocationModel.swift in Sources */,
 				B1056CA92A227B6F00C54D28 /* DetailViewController.swift in Sources */,
 				B141DF5D2A21D22F004B4EEC /* RestaurantsModel.swift in Sources */,
+				B1056CAC2A22FA3900C54D28 /* GPTModel.swift in Sources */,
 				B141DF522A211E19004B4EEC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,10 @@ final class HalfModalViewController: UIViewController, UIAdaptivePresentationCon
     @IBOutlet var rightSegueButton: UIButton!
     private var firebaseUtil = FirebaseUtil()
     private var restaurantsData: [Restaurants] = []
+    
+    private var jsonText: String = ""
+    
+    
 
     init() {
         super.init(nibName: R.nib.halfModalViewController.name, bundle: nil)
@@ -40,6 +44,12 @@ final class HalfModalViewController: UIViewController, UIAdaptivePresentationCon
     @IBAction func segueToDetailView() {
         let detailVC = DetailViewController()
         self.present(detailVC, animated: true)
+    }
+    
+    @IBAction func getGPTData() {
+        Task{
+            self.getGPTData()
+        }
     }
 }
 
@@ -82,4 +92,36 @@ private extension HalfModalViewController {
         rightBackGroundView.layer.shadowOffset = CGSize(width: 2, height: 2) // シャドウのオフセット
         rightBackGroundView.layer.shadowRadius = 4 // シャドウのぼかしの範囲
     }
+    
+    func getGPT() async throws {
+        let gptModel = GPTModel()
+        let apiKey = "ed4b254cca554e8a9a6268b6b85ce477"
+        let apiUrl = URL(string: "https://aoai-hakodate.openai.azure.com/openai/deployments/hakodate/chat/completions?api-version=2023-03-15-preview")!
+        // ダミーデータとしてコメントセットを定義
+        let commentSet = [
+            "店内の雰囲気が落ち着いており、食事をゆっくり楽しめた。",
+            "海鮮の新鮮さが感じられ、味わい深い一品だった。",
+            "スタッフの対応が素晴らしく、気持ちよく食事ができた。",
+            "海鮮の種類やボリュームが少なく、物足りなさを感じた。",
+            "ライスの量が多く、バランスが取りづらかった。",
+            "価格が高めで、コストパフォーマンスが少し劣る印象だった。",
+            "トッピングや具材の組み合わせがマンネリで、飽きが来た。",
+            "待ち時間が長く、サービスのスピードが改善できると良い。",
+            "音響が響きやすく、静かな食事が難しかった。",
+            "店内の清潔感や衛生管理に改善の余地があるように感じた。"
+        ]
+        
+        Task {
+            do {
+                let summary = try await gptModel.summarizeComments(comments: commentSet, apiKey: apiKey, completion: <#(Result<String, Error>) -> Void#>)
+                print("Summary: \(summary)")
+            } catch {
+                print("Error: \(error)")
+            }
+        }
+
+        
+    }
+    
+    
 }
