@@ -24,6 +24,18 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
 
+    @IBOutlet var qrButton: UIButton! {
+        didSet {
+            qrButton.layer.cornerRadius = 30
+            // 影
+            qrButton.layer.shadowColor = UIColor.black.cgColor
+            qrButton.layer.shadowOpacity = 0.8
+            qrButton.layer.shadowRadius = 8.0
+            qrButton.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+            qrButton.showsTouchWhenHighlighted = false
+        }
+    }
+
     private let firebaseUtil = FirebaseUtil()
 
     @IBOutlet var mapView: MKMapView!
@@ -205,7 +217,6 @@ extension HomeViewController {
         annotation.coordinate = initialLocation.coordinate
         mapView.addAnnotation(annotation)
     }
-
 }
 
 private extension HomeViewController {
