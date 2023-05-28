@@ -151,36 +151,41 @@ extension HomeViewController {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("didUpdateLocations locations=\(locations)")
-        let location = locations.first
-        guard
-            let latitude = location?.coordinate.latitude,
-            let longitude = location?.coordinate.longitude
-        else {
-            return
-        }
-        var locationData = Location(latitude: latitude, longitude: longitude)
-        let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        mapView.showsUserLocation = true
-        mapView.setRegion(region, animated: true)
-        print(location)
+//        print("didUpdateLocations locations=\(locations)")
+//
+//        // 一度だけ位置情報を取得したら、位置更新の監視を停止します
+//        locationManager.stopUpdatingLocation()
+//
+//        let location = locations.first
+//        guard
+//            let latitude = location?.coordinate.latitude,
+//            let longitude = location?.coordinate.longitude
+//        else {
+//            return
+//        }
+//
+//        var locationData = Location(latitude: latitude, longitude: longitude)
+//        let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+//        mapView.showsUserLocation = true
+//        mapView.setRegion(region, animated: true)
+//
+//        print(location)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("didFailWithError error=\(error.localizedDescription)")
     }
-
     private func setupMapView() {
         // ユーザーの現在位置を取得
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+//        locationManager.delegate = self
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.startUpdatingLocation()
 
         // 地図の初期表示領域を設定
-        let initialLocation = locationManager.location ?? CLLocation(latitude: 35.6895, longitude: 139.6917)
-        let regionRadius: CLLocationDistance = 1000
+        let initialLocation = CLLocation(latitude: 41.766423, longitude: 140.717687)
+        let regionRadius: CLLocationDistance = 300
         let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate,
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
@@ -190,6 +195,7 @@ extension HomeViewController {
         annotation.coordinate = initialLocation.coordinate
         mapView.addAnnotation(annotation)
     }
+
 }
 
 private extension HomeViewController {
