@@ -10,6 +10,10 @@ import UIKit
 final class HalfModalViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
     @IBOutlet var leftLabel: UILabel!
     @IBOutlet var rightLable: UILabel!
+    @IBOutlet var leftBackGroudView: UIView!
+    @IBOutlet var rightBackGroundView: UIView!
+    @IBOutlet var leftSegueButton: UIButton!
+    @IBOutlet var rightSegueButton: UIButton!
     private var firebaseUtil = FirebaseUtil()
     private var restaurantsData: [Restaurants] = []
 
@@ -24,10 +28,18 @@ final class HalfModalViewController: UIViewController, UIAdaptivePresentationCon
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
+        self.setUpBackGroundView()
+        self.leftSegueButton.isHidden = true
+        self.rightSegueButton.isHidden = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+
+    @IBAction func segueToDetailView() {
+        let detailVC = DetailViewController()
+        self.present(detailVC, animated: true)
     }
 }
 
@@ -35,7 +47,7 @@ private extension HalfModalViewController {
     func setUpView() {
         Task {
             do {
-                 restaurantsData = try await firebaseUtil.getDocuments()
+                restaurantsData = try await firebaseUtil.getDocuments()
                 print(restaurantsData)
                 guard
                     let leftData = restaurantsData.first?.name,
@@ -49,5 +61,25 @@ private extension HalfModalViewController {
                 print("Failed to retrieve document data: \(error.localizedDescription)")
             }
         }
+    }
+
+    func setUpBackGroundView() {
+        // 角丸を適用するために、UIViewのレイヤーのコーナー半径を設定
+        leftBackGroudView.layer.cornerRadius = leftBackGroudView.frame.height * 0.1
+
+        // シャドウの設定
+        leftBackGroudView.layer.shadowColor = UIColor.black.cgColor // シャドウの色
+        leftBackGroudView.layer.shadowOpacity = 0.5 // シャドウの透明度
+        leftBackGroudView.layer.shadowOffset = CGSize(width: 2, height: 2) // シャドウのオフセット
+        leftBackGroudView.layer.shadowRadius = 4 // シャドウのぼかしの範囲
+
+        // 角丸を適用するために、UIViewのレイヤーのコーナー半径を設定
+        rightBackGroundView.layer.cornerRadius = leftBackGroudView.frame.height * 0.1
+
+        // シャドウの設定
+        rightBackGroundView.layer.shadowColor = UIColor.black.cgColor // シャドウの色
+        rightBackGroundView.layer.shadowOpacity = 0.5 // シャドウの透明度
+        rightBackGroundView.layer.shadowOffset = CGSize(width: 2, height: 2) // シャドウのオフセット
+        rightBackGroundView.layer.shadowRadius = 4 // シャドウのぼかしの範囲
     }
 }

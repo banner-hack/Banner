@@ -7,14 +7,19 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var shopName: UILabel!
+
+    private var firebaseUtil = FirebaseUtil()
+    private var restaurantsData: [Restaurants] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.setUp()
     }
-
 
     /*
     // MARK: - Navigation
@@ -25,5 +30,21 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+private extension DetailViewController {
+    func setUp() {
+        Task {
+            do {
+                self.restaurantsData = try await firebaseUtil.getDocuments()
+                guard let shopName = restaurantsData.first?.name
+                else {
+                    return
+                }
+                self.shopName.text = shopName
+            } catch {
+                print("error")
+            }
+        }
+    }
 }

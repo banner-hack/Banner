@@ -36,30 +36,14 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trb-Bc-4VL">
-                    <rect key="frame" x="220" y="310" width="75" height="35"/>
+                    <rect key="frame" x="147" y="673" width="80" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="tintColor" systemColor="labelColor"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
                     <connections>
                         <action selector="halfModalButton" destination="-1" eventType="touchUpInside" id="ZDs-L4-499"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TF-bS-cfY">
-                    <rect key="frame" x="38" y="383" width="116" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="firebaseAdd"/>
-                    <connections>
-                        <action selector="testSaveToFirestore" destination="-1" eventType="touchUpInside" id="FwB-qC-CJC"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nL-bN-jvX">
-                    <rect key="frame" x="93" y="475" width="174" height="78"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="firebaseGet"/>
-                    <connections>
-                        <action selector="testGetData" destination="-1" eventType="touchUpInside" id="V7i-UB-ahZ"/>
                     </connections>
                 </button>
             </subviews>
@@ -70,6 +54,10 @@
     </objects>
     <resources>
         <image name="QR" width="80" height="80"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
