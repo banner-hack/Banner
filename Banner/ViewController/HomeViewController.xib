@@ -27,45 +27,42 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <standardMapConfiguration key="preferredConfiguration"/>
                 </mapView>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="Gv1-1D-crd">
-                    <rect key="frame" x="93.666666666666686" y="638" width="206" height="80"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trb-Bc-4VL">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="80" id="lBP-Wf-bQF"/>
-                                <constraint firstAttribute="width" constant="80" id="m48-bq-NgE"/>
-                            </constraints>
-                            <color key="tintColor" systemColor="labelColor"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
-                            <connections>
-                                <action selector="halfModalButton" destination="-1" eventType="touchUpInside" id="ZDs-L4-499"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFF-xX-cOv">
-                            <rect key="frame" x="126" y="0.0" width="80" height="80"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="80" id="M0K-22-c8H"/>
-                                <constraint firstAttribute="height" constant="80" id="nZQ-Aw-vcf"/>
-                            </constraints>
-                            <color key="tintColor" systemColor="labelColor"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system"/>
-                            <connections>
-                                <action selector="qrButtonTapped:" destination="-1" eventType="touchUpInside" id="CYO-d8-7YO"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFF-xX-cOv">
+                    <rect key="frame" x="293" y="109" width="80" height="80"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="lkV-up-1OH"/>
+                        <constraint firstAttribute="height" constant="80" id="qCg-Tv-ObQ"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system"/>
+                    <connections>
+                        <action selector="qrButtonTapped:" destination="-1" eventType="touchUpInside" id="CYO-d8-7YO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trb-Bc-4VL">
+                    <rect key="frame" x="156.66666666666666" y="638" width="80" height="80"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="8vS-EX-XWf"/>
+                        <constraint firstAttribute="height" constant="80" id="lRC-ft-7pd"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                    <connections>
+                        <action selector="halfModalButton" destination="-1" eventType="touchUpInside" id="ZDs-L4-499"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Gv1-1D-crd" secondAttribute="bottom" constant="100" id="BcU-Rw-J6w"/>
-                <constraint firstItem="Gv1-1D-crd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hhz-8n-vHt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dFF-xX-cOv" secondAttribute="trailing" constant="20" id="9Ca-Ov-CAh"/>
+                <constraint firstItem="trb-Bc-4VL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FXf-Hz-Yym"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="trb-Bc-4VL" secondAttribute="bottom" constant="100" id="Fo2-vE-jCN"/>
+                <constraint firstItem="dFF-xX-cOv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="mf3-JV-7PL"/>
             </constraints>
             <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
