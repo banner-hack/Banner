@@ -54,12 +54,18 @@ struct _R {
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 2 images.
+  /// This `_R.image` struct is generated, and contains static references to 4 images.
   struct image {
     let bundle: Foundation.Bundle
 
     /// Image `QR`.
     var qR: RswiftResources.ImageResource { .init(name: "QR", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `demo_img-1`.
+    var demo_img1: RswiftResources.ImageResource { .init(name: "demo_img-1", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `demo_img-2`.
+    var demo_img2: RswiftResources.ImageResource { .init(name: "demo_img-2", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `icons`.
     var icons: RswiftResources.ImageResource { .init(name: "icons", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -121,9 +127,12 @@ struct _R {
     var googleServiceInfoPlist: RswiftResources.FileResource { .init(name: "GoogleService-Info", pathExtension: "plist", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     let bundle: Foundation.Bundle
+
+    /// Nib `DetailViewController`.
+    var detailViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "DetailViewController", bundle: bundle) }
 
     /// Nib `HalfModalViewController`.
     var halfModalViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "HalfModalViewController", bundle: bundle) }
@@ -132,7 +141,10 @@ struct _R {
     var homeViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "HomeViewController", bundle: bundle) }
 
     func validate() throws {
+      if UIKit.UIImage(named: "demo_img-1", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'demo_img-1' is used in nib 'HalfModalViewController', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "demo_img-2", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'demo_img-2' is used in nib 'HalfModalViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "QR", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'QR' is used in nib 'HomeViewController', but couldn't be loaded.") }
+      if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "magnifyingglass") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'magnifyingglass' is used in nib 'HomeViewController', but couldn't be loaded.") } }
     }
   }
 

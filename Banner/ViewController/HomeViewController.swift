@@ -12,7 +12,17 @@ import UIKit
 final class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UIAdaptivePresentationControllerDelegate {
     let imagePickerController = UIImagePickerController()
 
-    @IBOutlet var halfModal: UIButton!
+    @IBOutlet var halfModal: UIButton! {
+        didSet {
+            halfModal.layer.cornerRadius = 30
+            // 影
+            halfModal.layer.shadowColor = UIColor.black.cgColor
+            halfModal.layer.shadowOpacity = 0.8
+            halfModal.layer.shadowRadius = 8.0
+            halfModal.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+            halfModal.showsTouchWhenHighlighted = false
+        }
+    }
 
     private let firebaseUtil = FirebaseUtil()
 
@@ -59,22 +69,22 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
         locationManager.requestWhenInUseAuthorization()
     }
 
-    @IBAction func testSaveToFirestore() {
-        Task {
-            try await firebaseUtil.addDocument()
-        }
-    }
+    //    @IBAction func testSaveToFirestore() {
+    //        Task {
+    //            try await firebaseUtil.addDocument()
+    //        }
+    //    }
 
-    @IBAction func testGetData() {
-        Task {
-            do {
-                let restaurantsData = try await firebaseUtil.getDocuments()
-                print(restaurantsData)
-            } catch {
-                print("Failed to retrieve document data: \(error.localizedDescription)")
-            }
-        }
-    }
+    //    @IBAction func testGetData() {
+    //        Task {
+    //            do {
+    //                let restaurantsData = try await firebaseUtil.getDocuments()
+    //                print(restaurantsData)
+    //            } catch {
+    //                print("Failed to retrieve document data: \(error.localizedDescription)")
+    //            }
+    //        }
+    //    }
 
     @IBAction func qrButtonTapped(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
