@@ -32,6 +32,7 @@ final class HalfModalViewController: UIViewController, UIAdaptivePresentationCon
         self.setUpBackGroundView()
         self.leftSegueButton.isHidden = true
         self.rightSegueButton.isHidden = true
+        self.addDemoDataButton.isHidden = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
