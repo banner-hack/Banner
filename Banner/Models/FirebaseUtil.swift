@@ -13,7 +13,7 @@ import Foundation
 struct FirebaseUtil {
     var db = Firestore.firestore()
 
-    lazy var docRef = db.collection("Restaurants")
+//    lazy var docRef = db.collection("Restaurants")
 
     init() {}
 
@@ -22,7 +22,7 @@ struct FirebaseUtil {
             let now = Date()
 
             let saveData = Restaurants(name: "test", businessHours: "8:00-21:00", address: "函館", latitude: 35.11, longitude: 135, comments: ["美味しい", "美味しい"])
-            try await db.collection("Restaurants").addDocument(from: saveData)
+            try await db.collection("Mobile-Restaurants").addDocument(from: saveData)
         } catch {
             print("Error adding document: \(error)")
         }
@@ -30,7 +30,7 @@ struct FirebaseUtil {
 
     func getDocuments() async throws -> [Restaurants] {
         var restaurants: [Restaurants] = []
-        let querySnapshot = try await db.collection("Restaurants").getDocuments()
+        let querySnapshot = try await db.collection("Mobile-Restaurants").getDocuments()
 
         for document in querySnapshot.documents {
             guard

@@ -14,6 +14,7 @@ final class HalfModalViewController: UIViewController, UIAdaptivePresentationCon
     @IBOutlet var rightBackGroundView: UIView!
     @IBOutlet var leftSegueButton: UIButton!
     @IBOutlet var rightSegueButton: UIButton!
+    @IBOutlet var addDemoDataButton: UIButton!
     private var firebaseUtil = FirebaseUtil()
     private var restaurantsData: [Restaurants] = []
 
@@ -40,6 +41,12 @@ final class HalfModalViewController: UIViewController, UIAdaptivePresentationCon
     @IBAction func segueToDetailView() {
         let detailVC = DetailViewController()
         self.present(detailVC, animated: true)
+    }
+
+    @IBAction func addDemoDataBtn() {
+        Task {
+            try await firebaseUtil.addDocument()
+        }
     }
 }
 
